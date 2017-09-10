@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdHocPOCModelStoreContainer" CdmEntityContainer="AdHocPOCEntities">
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="AdHocPOCModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Dataset" ColumnName="Dataset" />
+          <ScalarProperty Name="TranFile" ColumnName="TranFile" />
+          <ScalarProperty Name="RefFile" ColumnName="RefFile" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="EmplyeeName" ColumnName="EmplyeeName" />
+          <ScalarProperty Name="SalesTerri" ColumnName="SalesTerri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/knockout-3.2.0.js"></script>
+
+<h2>Ad-hoc Reporting User Interface</h2>
+
+<table border="0">
+    @* //Author :Manish Sharma 09/10/2017
+       //here we can read data from table and created control and submit key value to web api to filter data.
+        //I have yet not reached to that point.This is just basic filter based on column and value in Ko,jquery and MVC
+        <tr>
+        <td>Select Dataset:</td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="radio" name="Dataset" value="DC" checked: radioSelectedOptionValue />Data Sourcing</label>
+            <label><input type="radio" name="Dataset" value="CP" checked: radioSelectedOptionValue />Credit & pay</label>
+        </td>
+    </tr>
+
+    <tr>
+        <td> Select Transaction and Reference file:</td>
+    </tr>
+    <tr>
+
+        <td>
+            <select multiple>
+                <option value="Enriched">Enriched</option>
+                <option value="Held">Held</option>
+                <option value="Validated">Validated</option>
+            </select>
+        <td>
+        <td>
+            <select multiple>
+                <option value="Business Area Hierarchy">Business Area Hierarchy</option>
+                <option value="Employee Hierarchy">Employee Hierarchy</option>
+                <option value="Sales Territery">Sales Territery</option>
+            </select>
+        <td>
+    </tr>*@
+
+
+
+
+    <tr>
+
+        <td>
+            <select id="lstprops" data-bind="options:Properties,optionsCaption:'Select Property',value:SelectedProperty"></select>
+        </td>
+        <td>
+            =
+        </td>
+        <td>
+            <input type="text" id="txtval"
+                   data-bind="value:FilterValue" />
+
+        </td>
+        <td>
+                        <input type="submit" value="Submit" data-bind="vvalueUpdate:'onclick'"/>
+        </td>
+        <td>
+            <input type="reset" value="Reset" onclick="refreshPage()"/>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function refreshPage() {
+        window.location.reload();
+    }
+</script>
+
+<style type="text/css">
+    table, td {
+        border:  solid;
+    }
+
+    td {
+        width: 120x;
+        font-size: 20px;
+    }
+
+    thead {
+        background-color: blue;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>DataSet</td>
+            <td>Transaction File</td>
+            <td>Reference File</td>
+            <td>Amount</td>
+            <td>Created Date</td>
+            <td>Employee Name</td>
+            <td>Sales Territory</td>
+         </tr>
+    </thead>
+    <tbody data-bind="foreach:Transactions">
+        <tr>
+            <td><span data-bind="text:Id"></span></td>
+            <td><span data-bind="text:Dataset"></span></td>
+            <td><span data-bind="text:TranFile"></span></td>
+            <td><span data-bind="text:RefFile"></span></td>
+            <td><span data-bind="text:Amount"></span></td>
+            <td><span data-bind="text:CreatedDate"></span></td>
+            <td><span data-bind="text:EmplyeeName"></span></td>
+            <td><span data-bind="text:SalesTerri"></span></td>
+         </tr>
+    </tbody>
+</table>
+<script src="~/Scripts/MyScripts/SerachLogic.js"></script>
